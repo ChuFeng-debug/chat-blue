@@ -1,0 +1,257 @@
+<title>Chat Shield Privacy</title>
+<style>
+  :root {
+    --bg: #f6f8f7;
+    --surface: #ffffff;
+    --ink: #1a1f1c;
+    --muted: #5b655f;
+    --accent: #0b6b5d;
+    --accent-soft: #e4f0ec;
+    --border: #e1e6e2;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141817;
+      --surface: #1c211f;
+      --ink: #ecefec;
+      --muted: #9aa59e;
+      --accent: #3fc4a8;
+      --accent-soft: #1f3530;
+      --border: #2a302c;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #141817;
+    --surface: #1c211f;
+    --ink: #ecefec;
+    --muted: #9aa59e;
+    --accent: #3fc4a8;
+    --accent-soft: #1f3530;
+    --border: #2a302c;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Inter", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    line-height: 1.65;
+    padding-block: 56px;
+  }
+
+  h1, h2 {
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    font-weight: 600;
+    line-height: 1.2;
+    text-wrap: balance;
+  }
+
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .eyebrow .mark {
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .eyebrow .name {
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+  }
+
+  h1 {
+    font-size: clamp(28px, 5vw, 38px);
+    margin: 0 0 8px;
+  }
+
+  .updated {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0 0 40px;
+  }
+
+  .lede {
+    font-size: 18px;
+    color: var(--ink);
+    background: var(--accent-soft);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin: 0 0 44px;
+  }
+
+  section {
+    margin-bottom: 40px;
+  }
+
+  h2 {
+    font-size: 21px;
+    margin: 0 0 14px;
+    padding-top: 4px;
+    border-top: 1px solid var(--border);
+    padding-top: 18px;
+  }
+
+  section:first-of-type h2 { border-top: none; padding-top: 0; }
+
+  p { margin: 0 0 14px; color: var(--ink); }
+  p.muted, li.muted { color: var(--muted); }
+
+  ul { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 8px; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+    margin: 8px 0 4px;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th {
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  td code {
+    font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+    font-size: 13px;
+    background: var(--accent-soft);
+    padding: 2px 6px;
+    border-radius: 5px;
+  }
+
+  .contact {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+  }
+  .contact a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .contact a:hover { text-decoration: underline; }
+
+  .placeholder {
+    background: #ffe9b3;
+    color: #6b4a00;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .placeholder { background: #4a3a12; color: #ffd679; }
+  }
+  :root[data-theme="dark"] .placeholder { background: #4a3a12; color: #ffd679; }
+
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    text-align: center;
+    margin-top: 56px;
+  }
+
+  @font-face {
+    font-family: "Source Serif 4";
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+
+<div class="wrap">
+  <div class="eyebrow">
+    <div class="mark">🛡</div>
+    <span class="name">Chat Shield</span>
+  </div>
+
+  <h1>Privacy Policy</h1>
+  <p class="updated">Effective September 25, 2026</p>
+
+  <p class="lede">Short version: Chat Shield doesn't collect, store, or transmit anything about you. It runs entirely inside your browser tab and never talks to any server — including ours, because we don't have one.</p>
+
+  <section>
+    <h2>What this extension does</h2>
+    <p>Chat Shield is a browser extension for web.whatsapp.com. It adds a visual blur over your chat list, open conversation, and profile pictures so that people glancing at your screen can't read your messages — nothing more.</p>
+  </section>
+
+  <section>
+    <h2>Data we collect</h2>
+    <p>None. Chat Shield does not collect, log, sell, or share any personal data, browsing activity, or message content — yours or anyone you message. There is no analytics, no tracking pixel, and no remote server the extension communicates with.</p>
+  </section>
+
+  <section>
+    <h2>What stays on your device</h2>
+    <p>Your on/off preferences for each blur toggle are saved using Chrome's built-in <code>storage</code> API. This data:</p>
+    <ul>
+      <li>Never leaves your browser (it may sync across your own signed-in Chrome devices via Google's own account sync — Chat Shield never sees or touches it directly)</li>
+      <li>Is not readable by Chat Shield's developer, by web.whatsapp.com, or by any third party</li>
+      <li>Is deleted automatically if you remove the extension</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Permissions we ask for, and why</h2>
+    <table>
+      <tr><th>Permission</th><th>Why</th></tr>
+      <tr>
+        <td><code>storage</code></td>
+        <td>Remember your blur toggle preferences between browser sessions.</td>
+      </tr>
+      <tr>
+        <td><code>host_permissions</code><br><span class="muted">web.whatsapp.com only</span></td>
+        <td>Apply the blur styling to the page. Chat Shield cannot run on, read, or affect any other website.</td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Your WhatsApp messages</h2>
+    <p>Chat Shield never reads, copies, transmits, or stores the content of your chats. It applies a CSS visual effect (a blur filter) to elements already rendered in your browser by WhatsApp itself — it does not intercept, log, or have access to your messages in any other way.</p>
+  </section>
+
+  <section>
+    <h2>Changes to this policy</h2>
+    <p>If this policy changes, the update date at the top of this page will change accordingly. Material changes will also be reflected in the Chrome Web Store listing's version notes.</p>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <div class="contact">
+      <p style="margin-bottom:0">Questions about this policy or the extension: <a href="mailto:alexis.jb.belmer@gmail.com">alexis.jb.belmer@gmail.com</a></p>
+    </div>
+  </section>
+
+  <footer>Chat Shield for WhatsApp Web — an independent tool, not affiliated with or endorsed by WhatsApp or Meta.</footer>
+</div>
